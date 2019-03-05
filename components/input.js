@@ -6,13 +6,13 @@ const Input = props => (
       width="100%"
       openOnFocus
       items={props.comboboxItems}
-      onChange={props.comboboxOnChange}
       placeholder={props.placeholder}
+      onChange={props.comboboxOnChange}
     />
     <TextInput
       width="100%"
-      onChange={props.inputOnChange}
       value={props.inputValue}
+      onChange={props.inputOnChange}
     />
     <Button onClick={props.buttonOnClick}>Add</Button>
   </Pane>

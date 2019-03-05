@@ -1,8 +1,8 @@
 import React from "react";
 import marked from "marked";
-import Section from "./../section";
-import Column from "./../column";
-import Textarea from "./../textarea";
+import Section from "../section";
+import Column from "../column";
+import Textarea from "../textarea";
 
 class Previewer extends React.Component {
   constructor(props) {
@@ -30,8 +30,8 @@ class Previewer extends React.Component {
       <Section>
         <Column>
           <Textarea
-            onChange={this.handleChangePreviewer}
             value={this.state.previewerContent}
+            onChange={this.handleChangePreviewer}
           />
         </Column>
         <Column overflow="auto">

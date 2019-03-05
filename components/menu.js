@@ -7,8 +7,8 @@ export const MenuItem = ({ tabName, activeTab, handleMenuItemSelection }) => (
     marginLeft={0}
     key={tabName}
     id={tabName}
-    onSelect={() => handleMenuItemSelection(tabName)}
     isSelected={tabName === activeTab}
+    onSelect={() => handleMenuItemSelection(tabName)}
   >
     {tabName}
   </Tab>

@@ -1,9 +1,9 @@
 import React from "react";
 import { data } from "../../lib/source";
-import Section from "./../section";
-import Column from "./../column";
-import Textarea from "./../textarea";
-import Input from "./../input";
+import Section from "../section";
+import Column from "../column";
+import Textarea from "../textarea";
+import Input from "../input";
 
 class Constructor extends React.Component {
   constructor(props) {
@@ -28,7 +28,7 @@ class Constructor extends React.Component {
   }
 
   handleDropdownList(selection) {
-    data.map(item => {
+    data.forEach(item => {
       if (item.name === selection) {
         this.setState({
           constructorStorage: item.tag
@@ -70,22 +70,20 @@ class Constructor extends React.Component {
           flexDirection="column"
           justifyContent="space-around"
         >
-          {
-            <Input
-              comboboxItems={this.getItemList()}
-              comboboxOnChange={selection => this.handleDropdownList(selection)}
-              placeholder="Element"
-              inputOnChange={this.handleInputChange}
-              inputValue={this.state.constructorInput}
-              buttonOnClick={this.handleSubmit}
-            />
-          }
+          <Input
+            placeholder="Element"
+            comboboxItems={this.getItemList()}
+            comboboxOnChange={selection => this.handleDropdownList(selection)}
+            inputValue={this.state.constructorInput}
+            inputOnChange={this.handleInputChange}
+            buttonOnClick={this.handleSubmit}
+          />
         </Column>
         <Column>
           <Textarea
+            placeholder="# Your markdown would be appearing here..."
             value={this.state.constructorContent}
             onChange={this.handleMarkdownChange}
-            placeholder="# Your markdown would be appearing here..."
           />
         </Column>
       </Section>
