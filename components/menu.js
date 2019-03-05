@@ -1,4 +1,5 @@
 import { Tablist, Tab } from "evergreen-ui";
+import PropTypes from "prop-types";
 
 export const Menu = ({ children }) => <Tablist>{children}</Tablist>;
 
@@ -13,3 +14,13 @@ export const MenuItem = ({ tabName, activeTab, handleMenuItemSelection }) => (
     {tabName}
   </Tab>
 );
+
+Menu.propTypes = {
+  children: PropTypes.arrayOf(PropTypes.element)
+};
+
+MenuItem.propTypes = {
+  tabName: PropTypes.string,
+  activeTab: PropTypes.string,
+  handleMenuItemSelection: PropTypes.func
+};

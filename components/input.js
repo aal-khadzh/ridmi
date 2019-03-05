@@ -1,21 +1,34 @@
 import { TextInput, Combobox, Pane, Button } from "evergreen-ui";
+import PropTypes from "prop-types";
 
-const Input = props => (
+const Input = ({
+  comboboxItems,
+  placeholder,
+  comboboxOnChange,
+  inputValue,
+  inputOnChange,
+  buttonOnClick
+}) => (
   <Pane display={"flex"}>
     <Combobox
       width="100%"
       openOnFocus
-      items={props.comboboxItems}
-      placeholder={props.placeholder}
-      onChange={props.comboboxOnChange}
+      items={comboboxItems}
+      placeholder={placeholder}
+      onChange={comboboxOnChange}
     />
-    <TextInput
-      width="100%"
-      value={props.inputValue}
-      onChange={props.inputOnChange}
-    />
-    <Button onClick={props.buttonOnClick}>Add</Button>
+    <TextInput width="100%" value={inputValue} onChange={inputOnChange} />
+    <Button onClick={buttonOnClick}>Add</Button>
   </Pane>
 );
+
+Input.propTypes = {
+  placeholder: PropTypes.string,
+  comboboxItems: PropTypes.array,
+  comboboxOnChange: PropTypes.func,
+  inputValue: PropTypes.string,
+  inputOnChange: PropTypes.func,
+  buttonOnClick: PropTypes.func
+};
 
 export default Input;

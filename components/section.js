@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import { Pane } from "evergreen-ui";
 
@@ -13,5 +14,9 @@ const Section = ({ children }) => (
     {children}
   </Pane>
 );
+
+Section.propTypes = {
+  children: PropTypes.arrayOf(PropTypes.element)
+};
 
 export default Section;

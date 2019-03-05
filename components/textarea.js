@@ -1,13 +1,20 @@
 import { Textarea as EvergreenTextarea } from "evergreen-ui";
+import PropTypes from "prop-types";
 
-const Textarea = props => (
+export const Textarea = ({ placeholder, value, onChange }) => (
   <EvergreenTextarea
     height="100%"
     style={{ resize: "none" }}
-    placeholder={props.placeholder}
-    value={props.value}
-    onChange={props.onChange}
+    placeholder={placeholder}
+    value={value}
+    onChange={onChange}
   />
 );
+
+Textarea.propTypes = {
+  placeholder: PropTypes.string,
+  value: PropTypes.string,
+  onChange: PropTypes.func
+};
 
 export default Textarea;
